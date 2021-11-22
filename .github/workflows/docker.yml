@@ -34,6 +34,6 @@ jobs:
           # build-args: |
           #   arg1=value1
           #   arg2=value2
-          cache-from: type=registry,ref=mashirozx/mastodon:${{ github.event.release.tag_name }}
+          cache-from: type=registry,ref=mashirozx/elasticsearch-cnplugin:${{ github.event.release.tag_name }}
           cache-to: type=inline
           tags:  mashirozx/elasticsearch-cnplugin:${{ github.event.release.tag_name }}
