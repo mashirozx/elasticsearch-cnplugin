@@ -39,7 +39,7 @@ jobs:
           cache-from: type=registry,ref=mashirozx/elasticsearch-cnplugin:${{ github.event.release.tag_name }}-${{ matrix.platform }}
           cache-to: type=inline
           tags:  mashirozx/elasticsearch-cnplugin:${{ github.event.release.tag_name }}-${{ matrix.platform }}
-        if: ${{ matrix.platform == arm64 }}
+        if: ${{ matrix.platform == 'arm64' }}
         
         
       - name: ⚓ Build and push amd64 image
@@ -54,4 +54,4 @@ jobs:
           tags: |
             mashirozx/elasticsearch-cnplugin:${{ github.event.release.tag_name }}-${{ matrix.platform }}
             mashirozx/elasticsearch-cnplugin:${{ github.event.release.tag_name }}
-        if: ${{ matrix.platform == amd64 }}
+        if: ${{ matrix.platform == 'amd64' }}
