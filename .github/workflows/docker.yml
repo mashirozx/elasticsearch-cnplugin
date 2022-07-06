@@ -14,7 +14,7 @@ jobs:
     
     strategy:
       matrix:
-        platform: [amd64, arm64]
+        platform: [amd64, arm64, universal]
 
     steps:
       - name: 🔍 Checkout code
@@ -70,4 +70,4 @@ jobs:
           tags: |
             mashirozx/elasticsearch-cnplugin:${{ github.event.release.tag_name }}
             mashirozx/elasticsearch-cnplugin:latest
-        if: ${{ matrix.platform == 'amd64' }}
+        if: ${{ matrix.platform == 'universal' }}
